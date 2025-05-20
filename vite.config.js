@@ -7,7 +7,7 @@ export default defineConfig(({ command }) => ({
   publicDir: command === 'build' ? false : 'public',
   resolve: {
     alias: {
-      '@three.ez/package-name': resolve(__dirname, 'src/index.ts')
+      '@three.ez/asset-manager': resolve(__dirname, 'src/index.ts')
     }
   },
   build: {
