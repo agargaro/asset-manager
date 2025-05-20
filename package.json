@@ -1,0 +1,53 @@
+{
+  "name": "@three.ez/package-name",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Andrea Gargaro <devgargaro@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "module": "build/index.js",
+  "main": "build/index.cjs",
+  "types": "src/index.d.ts",
+  "homepage": "",
+  "repository": "https://github.com/agargaro/package-name",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./src/index.d.ts",
+        "default": "./build/index.js"
+      },
+      "require": {
+        "types": "./src/index.d.ts",
+        "default": "./build/index.cjs"
+      }
+    }
+  },
+  "keywords": [
+    "three",
+    "three.js",
+    "threejs"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build && tsc --build tsconfig.build.json",
+    "lint": "eslint --fix",
+    "test": "echo todo add tests",
+    "publish-patch": "npm version patch --git-tag-version false && npm run build && cd dist && npm publish --access public",
+    "publish-minor": "npm version minor --git-tag-version false && npm run build && cd dist && npm publish --access public",
+    "publish-major": "npm version major --git-tag-version false && npm run build && cd dist && npm publish --access public"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@types/three": "^0.176.0",
+    "eslint": "^9.27.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5",
+    "vite-plugin-externalize-deps": "^0.9.0",
+    "vite-plugin-static-copy": "^3.0.0"
+  },
+  "peerDependencies": {
+    "three": ">=0.159.0"
+  }
+}
